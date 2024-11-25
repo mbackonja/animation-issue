@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
+import Input from './components/Input';
+import Button from './components/Button';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState(1)
@@ -26,22 +28,26 @@ function TabOne() {
     <View style={{ backgroundColor: 'gray', gap: 10, width: '100%', padding: 10 }}>
       <View>
         <Text>Enter name</Text>
-        <TextInput style={styles.input} />
+        <Input />
       </View>
 
       <View>
         <Text>Enter email</Text>
-        <TextInput style={styles.input} />
+        <Input />
       </View>
 
       <View>
         <Text>Enter password</Text>
-        <TextInput style={styles.input} secureTextEntry />
+        <Input secureTextEntry />
       </View>
 
       <View>
         <Text>Enter password again</Text>
-        <TextInput style={styles.input} secureTextEntry />
+        <Input secureTextEntry />
+      </View>
+
+      <View style={{ flexDirection: 'row' }}>
+        <Button variant="primary" title="Submit" />
       </View>
     </View>
   )
@@ -52,12 +58,18 @@ function TabTwo() {
     <View style={{ backgroundColor: 'gray', gap: 10, width: '100%', padding: 10 }}>
       <View>
         <Text>Enter email</Text>
-        <TextInput style={styles.input} />
+        <Input />
       </View>
 
       <View>
         <Text>Enter password</Text>
-        <TextInput style={styles.input} secureTextEntry />
+        <Input secureTextEntry />
+      </View>
+
+      <Button variant="secondary" title="Clear" />
+
+      <View style={{ flexDirection: 'row' }}>
+        <Button variant="primary" title="Submit" />
       </View>
     </View>
   )
